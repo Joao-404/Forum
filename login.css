@@ -1,0 +1,17 @@
+/* foto.css  */
+
+.erro { color:red; }
+
+label, input, span{ display: block; }
+
+label {  margin-top: 1.5em; }
+
+input[type='submit'] { margin-top: 1.5em; }
+
+span { text-align: center; }
+
+section { display: flex; }
+
+aside {  margin-left: 2em; }
+
+
