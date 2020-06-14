@@ -55,6 +55,7 @@
 			<input type="submit" value="Login">
 
 		</form>
+		<input type=button onClick="location.href='registo.php'" value='Register'>
 
 	</section>
 

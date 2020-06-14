@@ -13,6 +13,9 @@
 		exit();
 	}
 
+	include('content.php');
+	$threads=getposts();
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -22,32 +25,47 @@
 	</head>
 <body>
 	<header>
+	<input type=button onClick="location.href='NewTopic.php'" value='Make New'>
 			<span class="username">
 			<?php echo $username; ?>		
 			</span>
 			<a href="logout.php">Logout</a>
 	</header>
-	<nav>
-		<a href="homepage.php">home</a>
-		
-	</nav>
+	
 <main>
 
-	<h2>HomePage</h2>
+	<div class="content">
+
+	
+	<?php 
+			foreach ($threads as $content): 
+				$id= $content['id'];
+				$title= $content['title'];
+				$replies= $content['replies'];
+				$author= $content['author'];
+				//$posted= $content['posted'];
+				$posted = date("Y-m-d",$content['posted']);
 
 
-	<aside>
-		<pre>
-			<?php print_r($_COOKIE); ?> 
-		</pre>
-	</aside>
+		?>
+			<div>
+			<h3><a href='msg.php' id=<?php echo $id; ?>'><?php echo $title; ?></a> <?php echo $replies; ?></h3><h4>Posted by <?php echo $author ?> on <?php echo $posted ?></h4>
+			</div>
+		<?php		
+			endforeach;
+		?>
+
+	</div>
+
+
+	
 
 
 
 </main>
 
 	<footer>
-		<h2>Homepage</h2>
+		
 	</footer>
 
 </body>

@@ -27,7 +27,7 @@
 		}
 		else
 		{
-			$msgErro = "username e password não correspondem!";
+			$msgErro = "Fill in the boxes!";
 		}	
 	}
 
@@ -62,7 +62,7 @@
 			<input type="submit" value="Registar User">
 
 		</form>
-
+		
 		
 	</section>
 
